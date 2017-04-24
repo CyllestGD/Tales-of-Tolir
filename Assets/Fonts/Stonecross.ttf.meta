@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 46191760d3dc5984a924beb3288eb9ff
+timeCreated: 1492999871
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Stonecross
+  fontNames:
+  - Stonecross
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
