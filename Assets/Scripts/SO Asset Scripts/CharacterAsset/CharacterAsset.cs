@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum CharClass{ Elf, Monk, Warrior}
+public enum Heroes{Alyx, Brandon, Jordan, Paul}
 
-public class CharacterAsset : ScriptableObject 
-{
-	public CharClass Class;
-	public string className;
+public class CharacterAsset : ScriptableObject {
+	public Heroes Hero;
+	public string HeroName;
 	public int maxHealth = 30;
 	public string heroPowerName;
 	public Sprite avatarImage;

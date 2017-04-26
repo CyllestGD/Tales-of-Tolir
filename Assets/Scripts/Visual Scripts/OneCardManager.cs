@@ -24,7 +24,7 @@ public class OneCardManager : MonoBehaviour {
 
     void Awake() {
         if (cardAsset != null)
-            readCardFromAsset();
+            ReadCardFromAsset();
     }
 
     private bool canBePlayedNow = false;
@@ -40,7 +40,7 @@ public class OneCardManager : MonoBehaviour {
         }
     }
 
-    public void readCardFromAsset() {
+    public void ReadCardFromAsset() {
         // Generating Cards
         // Apply Card Colour
         if (cardAsset.characterAsset != null) {
@@ -74,7 +74,7 @@ public class OneCardManager : MonoBehaviour {
             // This is a card, not a preview
             // Preview GameObject will have OneCardManager as well, but PreviewManager should be null there
             PreviewManager.cardAsset = cardAsset;
-            PreviewManager.readCardFromAsset();
+            PreviewManager.ReadCardFromAsset();
         }
     }
 }

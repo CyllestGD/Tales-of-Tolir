@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bd82d815c8420714eb37b35ea11faf77
-timeCreated: 1493107541
+guid: 5f26bbb764a15e04fb414937af93ae8d
+timeCreated: 1493206217
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: templar1_0
+    21300000: Hero Power Pic_0
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -38,9 +38,9 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.4450231, y: 0.3769926}
-  spriteBorder: {x: 266, y: 0, z: 306, w: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -79,15 +79,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: templar1_0
+      name: Hero Power Pic_0
       rect:
         serializedVersion: 2
-        x: 412
-        y: 35
-        width: 571
-        height: 828
+        x: 64
+        y: 50
+        width: 375
+        height: 375
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
