@@ -2,76 +2,88 @@
 using System.Collections;
 using UnityEngine.UI;
 
-// Holds references for all my card information
+// holds the refs to all the Text, Images on the card
 public class OneCardManager : MonoBehaviour {
 
     public CardAsset cardAsset;
     public OneCardManager PreviewManager;
     [Header("Text Component References")]
-    public Text nameText;
-    public Text manaCostText;
-    public Text descriptionText;
-    public Text healthText;
-    public Text attackText;
+    public Text NameText;
+    public Text ManaCostText;
+    public Text DescriptionText;
+    public Text HealthText;
+    public Text AttackText;
+    [Header ("GameObject References")]
+    public GameObject HealthIcon;
+    public GameObject AttackIcon;
     [Header("Image References")]
-    public Image cardTopRibbonImage;
-    public Image cardLowRibbonImage;
-    public Image cardGraphicImage;
-    public Image cardBodyImage;
-    public Image cardFaceFrameImage;
-    public Image cardFaceGlowImage;
-    public Image cardBackGlowImage;
+    public Image CardTopRibbonImage;
+    public Image CardLowRibbonImage;
+    public Image CardGraphicImage;
+    public Image CardBodyImage;
+    public Image CardFaceFrameImage;
+    public Image CardFaceGlowImage;
+    public Image CardBackGlowImage;
 
-    void Awake() {
+    void Awake()
+    {
         if (cardAsset != null)
             ReadCardFromAsset();
     }
 
     private bool canBePlayedNow = false;
-    public bool CanBePlayedNow {
-        get {
+    public bool CanBePlayedNow
+    {
+        get
+        {
             return canBePlayedNow;
         }
 
-        set {
+        set
+        {
             canBePlayedNow = value;
 
-            cardFaceGlowImage.enabled = value;
+            CardFaceGlowImage.enabled = value;
         }
     }
 
-    public void ReadCardFromAsset() {
-        // Generating Cards
-        // Apply Card Colour
-        if (cardAsset.characterAsset != null) {
-            cardBodyImage.color = cardAsset.characterAsset.classCardTint;
-            cardFaceFrameImage.color = cardAsset.characterAsset.classCardTint;
-            cardTopRibbonImage.color = cardAsset.characterAsset.classRibbonsTint;
-            cardLowRibbonImage.color = cardAsset.characterAsset.classRibbonsTint;
+    public void ReadCardFromAsset()
+    {
+        // universal actions for any Card
+        // 1) apply tint
+        if (cardAsset.characterAsset != null)
+        {
+            CardBodyImage.color = cardAsset.characterAsset.ClassCardTint;
+            CardFaceFrameImage.color = cardAsset.characterAsset.ClassCardTint;
+            CardTopRibbonImage.color = cardAsset.characterAsset.ClassRibbonsTint;
+            CardLowRibbonImage.color = cardAsset.characterAsset.ClassRibbonsTint;
         }
-        else {
-            //cardBodyImage.color = GlobalSettings.Instance.CardBodyStandardColor;
-            cardFaceFrameImage.color = Color.white;
-            //cardTopRibbonImage.color = GlobalSettings.Instance.cardRibbonsStandardColor;
-            //cardLowRibbonImage.color = GlobalSettings.Instance.cardRibbonsStandardColor;
+        else
+        {
+            CardBodyImage.color = GlobalSettings.Instance.CardBodyStandardColor;
+            CardFaceFrameImage.color = Color.white;
+            CardTopRibbonImage.color = GlobalSettings.Instance.CardRibbonsStandardColor;
+            CardLowRibbonImage.color = GlobalSettings.Instance.CardRibbonsStandardColor;
         }
-        // Add Card Name
-        nameText.text = cardAsset.name;
-        // Add Mana Cost
-        manaCostText.text = cardAsset.manaCost.ToString();
-        // Add Description
-        descriptionText.text = cardAsset.description;
-        // Add Card Image
-        cardGraphicImage.sprite = cardAsset.cardImage;
+        // 2) add card name
+        NameText.text = cardAsset.name;
+        // 3) add mana cost
+        ManaCostText.text = cardAsset.ManaCost.ToString();
+        // 4) add description
+        DescriptionText.text = cardAsset.Description;
+        // 5) Change the card graphic sprite
+        CardGraphicImage.sprite = cardAsset.CardImage;
 
-        if (cardAsset.maxHealth != 0) {
-            // This is a minion card
-            attackText.text = cardAsset.attack.ToString();
-            healthText.text = cardAsset.maxHealth.ToString();
+        if (cardAsset.MaxHealth != 0)
+        {
+            // this is a creature
+            AttackText.text = cardAsset.Attack.ToString();
+            HealthText.text = cardAsset.MaxHealth.ToString();
         }
 
-        if (PreviewManager != null) {
-            // This is a card, not a preview
+        if (PreviewManager != null)
+        {
+            // this is a card and not a preview
             // Preview GameObject will have OneCardManager as well, but PreviewManager should be null there
             PreviewManager.cardAsset = cardAsset;
             PreviewManager.ReadCardFromAsset();
